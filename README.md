@@ -9,14 +9,8 @@ To install this project, clone the repository to your local machine, open the in
 - Customizable background image using Unsplash.
 - Informative message for added fun.
 
-## Known Issues
-- [x] The Dynamic image from Unsplash is not working
-
 ## Contributing
 To contribute to this project, please submit any issues or pull requests on the GitHub repository.
 
 ## License
-This project is licensed under the MIT License. See the [LICENSE](https://github.com/thesushilsharma/Birthday-Countdown/blob/main/LICENSE) file for details.
-
-## Acknowledgments
-- Background image from [Unsplash](https://unsplash.com/)
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/thesushilsharma/BirthdayBlink/blob/main/LICENSE) file for details.
