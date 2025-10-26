@@ -6,46 +6,135 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: linear-gradient(-45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57, #ff9ff3);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .countdown-number {
+            transition: all 0.3s ease;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .countdown-number:hover {
+            transform: scale(1.1);
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.7;
+            }
+        }
+
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .year-info-section {
+            margin-bottom: 2rem;
+        }
+        
+        .yearold {
+            transition: all 0.3s ease;
+        }
+        
+        .yearold:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+    </style>
     <meta name="description"
         content="Sushil Sharma has vast experience in website designing, development, and optimization, and is also proficient in WordPress. I am in charge of testing and maintaining the applications and websites I develop, as well as the documentation that goes with them." />
     <meta name="author" content="Sushil Sharma's Birthday" />
     <meta name="keywords"
-        content="HTML, CSS, Portfolio, Github, Github pages, Freelancer, Website Developement, JavaScript, PHP, Developer, Tailwind, Bootstrap, VSCode, Birthday Countdown, Birthday Counter, Vanilla CSS, Vanilla JS" />
+        content="HTML, CSS, Portfolio, Github, Github pages, Website Developement, JavaScript, Developer, Tailwind, Bootstrap, VSCode, Birthday Countdown, Birthday Counter, Vanilla CSS, Vanilla JS" />
     <title>Birthday Countdown | Sushil Sharma | How long until Sushil Sharma's birthday?</title>
 </head>
 
 <body>
     <main>
-        <section
-            class="w-full h-screen bg-center bg-cover bg-no-repeat bg-[url('https://source.unsplash.com/1024x768/?birthday')] flex items-center justify-center">
-            <div class="backdrop-blur-xl p-8 font-mono">
-                <div id="dateyear" class="dateyear text-center mt-4 text-3xl font-bold text-red-600"></div>
-                <div id="yearold" class="yearold text-center mt-2 text-7xl font-semibold text-gray-700 underline decoration-double"></div>
-                <div id="message"
-                    class="message text-center mt-4 text-4xl text-blue-700 font-semibold">Now
-                    you can
-                    sleep
-                    until your birthday. Hurray!</div>
-                <span class="text-center block mb-4 text-4xl text-purple-600 underline decoration-wavy">The Day of Sushil Sharma</span>
-                <h1 id="birthdayTime" class="text-5xl font-bold text-gray-800 text-center my-4">Birthday Countdown:</h1>
+        <section class="w-full h-screen flex items-center justify-center p-4">
+            <div class="glass-card p-8 font-mono max-w-4xl w-full float-animation">
+                <!-- Year Info Section -->
+                <div class="year-info-section text-center mb-6">
+                    <div id="dateyear" class="dateyear text-2xl font-bold text-white text-shadow mb-2"></div>
+                    <div id="yearold" class="yearold text-5xl font-bold text-white text-shadow bg-white bg-opacity-20 rounded-xl p-4 inline-block backdrop-blur-sm border-2 border-white border-opacity-30"></div>
+                </div>
+                <div id="message" class="message text-center mt-4 text-3xl text-white font-semibold text-shadow">✨ The
+                    anticipation builds... Every second brings us closer to celebration! 🎊</div>
+                <span class="text-center block mb-4 text-4xl text-white underline decoration-wavy text-shadow">🎂
+                    Sushil's Special Day 🎂</span>
+                <h1 id="birthdayTime" class="text-5xl font-bold text-white text-center my-4 text-shadow">🎈 Time Until
+                    Magic Happens 🎈</h1>
 
 
-                <div id="countdown" class="countdown flex justify-center">
-                    <div class="clock text-center mx-2">
-                        <h2 id="days" class="text-6xl font-bold text-red-600">00</h2>
-                        <small class="text-base text-slate-950">days</small>
+                <div id="countdown" class="countdown flex justify-center flex-wrap gap-6">
+                    <div class="clock text-center bg-white bg-opacity-20 rounded-xl p-4 backdrop-blur-sm">
+                        <h2 id="days" class="text-6xl font-bold text-white countdown-number">00</h2>
+                        <small class="text-base text-white font-semibold">days</small>
                     </div>
-                    <div class="clock text-center mx-2">
-                        <h2 id="hours" class="text-6xl font-bold text-red-600">00</h2>
-                        <small class="text-base text-slate-950">hours</small>
+                    <div class="clock text-center bg-white bg-opacity-20 rounded-xl p-4 backdrop-blur-sm">
+                        <h2 id="hours" class="text-6xl font-bold text-white countdown-number">00</h2>
+                        <small class="text-base text-white font-semibold">hours</small>
                     </div>
-                    <div class="clock text-center mx-2">
-                        <h2 id="minutes" class="text-6xl font-bold text-red-600">00</h2>
-                        <small class="text-base text-slate-950">minutes</small>
+                    <div class="clock text-center bg-white bg-opacity-20 rounded-xl p-4 backdrop-blur-sm">
+                        <h2 id="minutes" class="text-6xl font-bold text-white countdown-number">00</h2>
+                        <small class="text-base text-white font-semibold">minutes</small>
                     </div>
-                    <div class="clock text-center mx-2">
-                        <h2 id="seconds" class="text-6xl font-bold text-red-600">00</h2>
-                        <small class="text-base text-slate-950">seconds</small>
+                    <div class="clock text-center bg-white bg-opacity-20 rounded-xl p-4 backdrop-blur-sm">
+                        <h2 id="seconds" class="text-6xl font-bold text-white countdown-number pulse-animation">00</h2>
+                        <small class="text-base text-white font-semibold">seconds</small>
                     </div>
                 </div>
             </div>
